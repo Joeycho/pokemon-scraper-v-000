@@ -66,7 +66,7 @@ class Pokemon
       rescue
         puts "No hp added"
       else
-        binding.pry
+        #binding.pry
         db.execute("UPDATE pokemon SET hp = (#{hp}) WHERE name = '#{self.name}'")
         @hp = hp
       end
