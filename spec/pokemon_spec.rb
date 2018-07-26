@@ -44,10 +44,8 @@ describe "Pokemon" do
 
     before do
       @sql_runner.execute_create_hp_column
-      binding.pry
       Pokemon.save('Pikachu', 'electric', @db)
       Pokemon.save('Magikarp', 'water', @db)
-      binding.pry
     end
 
     let(:pikachu){Pokemon.find(1, @db)}
