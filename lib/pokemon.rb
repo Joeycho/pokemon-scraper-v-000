@@ -23,6 +23,15 @@ class Pokemon
 
     database_connection.execute("INSERT INTO pokemon (name, type) VALUES ( ?, ?)" ,name, type)
 
+    begin
+    database_connection.execute("SELECT hp FROM pokemon")
+    binding.pry
+    rescue
+
+    else
+    database_connection.execute("UPDATE pokemon SET hp = 60")
+    end
+
   end
 
   def self.find(id,db)
