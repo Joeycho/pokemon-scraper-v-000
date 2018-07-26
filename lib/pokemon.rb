@@ -33,6 +33,7 @@ class Pokemon
 
     begin
     db.execute("SELECT hp FROM pokemon")
+    binding.pry
     rescue
 
     else
