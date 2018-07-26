@@ -37,7 +37,7 @@ class Pokemon
 
     else
     pokemon_ob.hp = pokemon_db[0][3]
-  #  binding.pry
+    binding.pry
     end
     binding.pry
     pokemon_ob.id = pokemon_db[0][0]
