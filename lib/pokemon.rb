@@ -15,7 +15,6 @@ class Pokemon
     @name = name
     @type = type
     @db = db
-    @hp = 60
     @@all << self
 
   end
@@ -37,17 +36,31 @@ class Pokemon
     rescue
 
     else
-    db.execute("INSERT INTO pokemon (hp) VALUES (60)")
+    pokemon_ob.hp = pokemon_db[0][3]
   #  binding.pry
     end
     #binding.pry
-
     pokemon_ob.id = pokemon_db[0][0]
     pokemon_ob.name = pokemon_db[0][1]
     pokemon_ob.type = pokemon_db[0][2]
     pokemon_ob.db = db
 
     pokemon_ob
+  end
+
+  def alter_hp(hp, db)
+    if db != nil
+      begin
+        db.execute("SELECT hp FROM pokemon")
+      rescue
+        puts "No hp added"
+      else
+        binding.pry
+        db.execute("INSERT INTO pokemon (hp) VALUES(#{hp})")
+        @hp = hp
+      end
+
+    end
   end
 
 end
