@@ -25,12 +25,12 @@ class Pokemon
 
     begin
     database_connection.execute("SELECT hp FROM pokemon")
-    binding.pry
+  #  binding.pry
     rescue
 
     else
     database_connection.execute("UPDATE pokemon SET hp = 60")
-    binding.pry
+  #  binding.pry
     end
 
   end
@@ -43,14 +43,14 @@ class Pokemon
 
     begin
     db.execute("SELECT hp FROM pokemon")
-    binding.pry
+  #  binding.pry
     rescue
 
     else
     pokemon_ob.hp = pokemon_db[0][3]
-    binding.pry
+  #  binding.pry
     end
-    binding.pry
+  #  binding.pry
     pokemon_ob.id = pokemon_db[0][0]
     pokemon_ob.name = pokemon_db[0][1]
     pokemon_ob.type = pokemon_db[0][2]
