@@ -30,6 +30,7 @@ class Pokemon
 
     else
     database_connection.execute("UPDATE pokemon SET hp = 60")
+    binding.pry
     end
 
   end
